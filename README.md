@@ -1,9 +1,13 @@
 # dlp-donacion
 
+# Sprint 1
+
+# Tareas:
+
 | Actividad | Responsable | Estado|
 | --------- | ----------- | ----- |
 | Crear repositorio para el proyecto | Rodrigo González | en proceso..|
 | Confeccionar el mockup de la interfaz de donación | ? | - |
-| Buscar librerías de next/react/js para los QR | ? | - |
+| Buscar librerías de next/react/js para los QR / correos | Rodrigo González | en proceso.. |
 | Seleccionar componentes chakra para la interfaz | ? | - |
 | Desarrollar prototipo semifuncional de la donación de libros | ? | - |
