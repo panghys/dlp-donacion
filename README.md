@@ -1,8 +1,5 @@
-# dlp-donacion
 
 # Sprint 1
-
-# Tareas:
 
 | Actividad | Responsable | Estado|
 | --------- | ----------- | ----- |
