@@ -6,5 +6,5 @@
 | Crear repositorio para el proyecto | Rodrigo González | en proceso..|
 | Confeccionar el mockup de la interfaz de donación | ? | - |
 | Buscar librerías de next/react/js para los QR / correos | Rodrigo González | en proceso.. |
-| Seleccionar componentes chakra para la interfaz | ? | - |
+| Seleccionar componentes chakra para la interfaz | aaaaa | - |
 | Desarrollar prototipo semifuncional de la donación de libros | ? | - |
