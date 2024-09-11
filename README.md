@@ -1,6 +1,7 @@
 
 # Sprint 1
 
+
 | Actividad | Responsable | Estado|
 | --------- | ----------- | ----- |
 | Crear repositorio para el proyecto | Rodrigo González | en proceso..|
@@ -8,3 +9,4 @@
 | Buscar librerías de next/react/js para los QR / correos | Rodrigo González | en proceso.. |
 | Seleccionar componentes chakra para la interfaz | ? | - |
 | Desarrollar prototipo semifuncional de la donación de libros | ? | - |
+| a | ? | - |
