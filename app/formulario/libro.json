@@ -1,0 +1,11 @@
+{
+    "cuadrotx":[
+        "Nombre del libro","Nombre del Autor"
+    ],
+    "tes":[
+        { "id": "Tipo de Texto", "title": ["Manga","Libro","Comic","Revista"] },
+        { "id": "Genero", "title": ["Fantasia","Romanse","Accion","Misterio","Horror","Ciencia ficcion","Investigacion cientifica"] }
+        
+    ]
+
+}

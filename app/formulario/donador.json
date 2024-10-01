@@ -1,0 +1,10 @@
+{
+    "cuadrotx":[
+        "Nombre","Correo"
+    ],
+    "tes":[
+        { "id": "¿Donacion anonima?", "title": ["si","no"] }
+        
+    ]
+
+}
