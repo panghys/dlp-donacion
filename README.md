@@ -29,9 +29,9 @@
 
 -[Creación y envío de correos](https://resend.com/docs/send-with-nextjs)
 
-## Retroalimentación Split 1
+## Retroalimentación Sprint 1
 
-| Por hacer.. |
+| Qué corregir... |
 | ------------ |
 | Consulta anónima |
 | Base de datos de categorías / lista de categorías |
