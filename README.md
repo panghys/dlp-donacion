@@ -31,6 +31,8 @@
 
 ## Retroalimentación Split 1
 
+| Por hacer.. |
+| ------------ |
 | Consulta anónima |
 | Base de datos de categorías / lista de categorías |
 | Añadir tipo 'radio' para las opciones que lo necesiten | 
