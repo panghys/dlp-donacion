@@ -3,7 +3,7 @@
         "Nombre","Correo"
     ],
     "tes":[
-        { "id": "¿Donacion anonima?", "title": ["si","no"] }
+        { "id": "¿Desea que su donación sea anónima?", "title": ["Si","No"] }
         
     ]
 
