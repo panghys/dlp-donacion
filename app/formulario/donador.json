@@ -1,8 +1,4 @@
 {
-    "cuadrotx": [
-        "Nombre",
-        "Correo"
-    ],
     "tes": [
         {
             "id": "anonimo",
@@ -10,5 +6,10 @@
             "opciones": ["Si", "No"],
             "tipo": "radio"
         }
+    ],
+    
+    "cuadrotx": [
+        "Correo"
     ]
+
 }
