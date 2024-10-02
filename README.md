@@ -13,8 +13,8 @@
 # Documentación de librerías
 ## Librerías que posiblemente utilizaremos
 
-[Creación de códigos qr react](https://www.npmjs.com/package/qrcode.react)
--
-[Creación de códigos qr (node.js)](https://www.npmjs.com/package/qrcode)
--
-[Creación y envió de correos](https://resend.com/docs/send-with-nextjs)
+-[Creación de códigos qr react](https://www.npmjs.com/package/qrcode.react)
+
+-[Creación de códigos qr (node.js)](https://www.npmjs.com/package/qrcode)
+
+-[Creación y envió de correos](https://resend.com/docs/send-with-nextjs)
