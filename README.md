@@ -7,7 +7,9 @@
 | Crear repositorio para el proyecto | Rodrigo González | Listo |
 | Confeccionar el mockup de la interfaz de donación | Javier Martinez  | Listo |
 | Buscar librerías de next/react/js para los QR / correos | Rodrigo González | Listo |
-| Seleccionar componentes chakra para la interfaz | Erick López | Listo |
+| Seleccionar componentes chakra para la interfaz | Diego Mora | Listo |
+| Crear código para guardar información del usuario/libro | Erick López | en progreso...|
+
 
 # Mockup de la página
 
@@ -25,4 +27,4 @@
 
 -[Creación de códigos qr (node.js)](https://www.npmjs.com/package/qrcode)
 
--[Creación y envió de correos](https://resend.com/docs/send-with-nextjs)
+-[Creación y envío de correos](https://resend.com/docs/send-with-nextjs)
