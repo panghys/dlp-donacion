@@ -9,6 +9,14 @@
 | Buscar librerías de next/react/js para los QR / correos | Rodrigo González | Listo |
 | Seleccionar componentes chakra para la interfaz | Erick López | Listo |
 
+# Mockup de la página
+
+![Prototipo del ingreso de información del usuario](https://cdn.discordapp.com/attachments/1241914858228944907/1291049770433122414/image.png?ex=66feaf4b&is=66fd5dcb&hm=59059e716627f2b667b4f3d5e4b3bf82b4bdd644f06cdb39349f1ed718995b1a&)
+
+![Prototipo del ingreso de información del libro](https://cdn.discordapp.com/attachments/1241914858228944907/1291050476946587789/image.png?ex=66feaff4&is=66fd5e74&hm=4d6136ecafd41f43e1868cf8d7a43a282ed62faaa04d97d3e0af218194d14334&)
+
+
+
 
 # Documentación de librerías
 ## Librerías que posiblemente utilizaremos
