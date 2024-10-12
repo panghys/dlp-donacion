@@ -37,3 +37,13 @@
 | Base de datos de categorías / lista de categorías |
 | Añadir tipo 'radio' para las opciones que lo necesiten | 
 | Buscar una forma más óptima de agrupar los tipos de libro |
+
+# Sprint 2
+
+| Actividad | Responsable | Estado|
+| --------- | ----------- | ----- |
+| Diseño general y hacer funcionar los botones | - | - |
+| Portear projecto a Tailwind CSS | -  | - |
+| Creación de códigos qr y descarga de estos | Rodrigo González | Listo |
+| Creación de variables / adaptar a la API | - | - |
+| - | - | - |
