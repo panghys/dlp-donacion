@@ -46,4 +46,5 @@
 | Portear projecto a Tailwind CSS | -  | - |
 | Creación de códigos qr y descarga de estos | Rodrigo González | Listo |
 | Creación de variables / adaptar a la API | - | - |
+| Funcionalidad de botones informacion del usuario  | Alvaro Guarda  | Listo |
 | - | - | - |
