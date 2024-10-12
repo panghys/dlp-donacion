@@ -1,4 +1,10 @@
 {
+    "cuadrotx": [
+        {
+            "id":"Correo",
+            "gris":"escriba su correo"
+        }
+    ],
     "tes": [
         {
             "id": "anonimo",
@@ -6,10 +12,5 @@
             "opciones": ["Si", "No"],
             "tipo": "radio"
         }
-    ],
-    
-    "cuadrotx": [
-        "Correo"
     ]
-
 }

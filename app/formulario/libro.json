@@ -1,10 +1,31 @@
 {
     "cuadrotx":[
-        "Nombre del libro",
-        "Nombre del Autor"
+        {
+            "id":"Nombre del libro",
+            "gris":"Escriba el nombre correctamente"
+        },
+        {
+            "id":"Nombre del Autor",
+            "gris":"si es mas de uno separelo por comas"
+        }
+        
+        
     ],
     "tes":[
-        { "id": "Tipo de Texto", "title": ["Manga","Libro","Comic","Revista"] },
-        { "id": "Género", "title": ["Fantasia","Romance","Accion","Misterio","Horror","Ciencia ficción","Investigación científica"] }
+        { 
+            "id": "Tipo de Texto", 
+            "pregunta":"¿Que tipo de texto es?",
+            "opciones": ["Manga","Libro","Comic","Revista"],
+            "tipo":"radio"
+        },
+
+        { 
+            "id": "Genero", 
+            "pregunta":"¿Que genero es el libro?",
+            "opciones": ["Fantasia","Romance","Juvenil","Misterio","Terror","Ciencia ficcion","Historia","Literatura clásica"],
+            "tipo":"checkbox"
+        }
+        
     ]
+
 }
