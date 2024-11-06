@@ -1,15 +1,24 @@
-"use client";
+"use client"; // Marca el componente para que se ejecute en el cliente
 
 import { useSearchParams } from 'next/navigation';
 import QRCode from 'react-qr-code';
-import { useRef } from 'react';
+import { useRef, Suspense } from 'react';
 
 export default function QRPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}> {/* Fallback que se muestra mientras el componente se carga */}
+      <QRContent />
+    </Suspense>
+  );
+}
+
+function QRContent() {
   const searchParams = useSearchParams();
-  const id = searchParams.get('id') || 12;
+  const id = searchParams.get('id') || 12; // Default to 12 if no 'id' in search params
   const linkqr = `https://dlp.com/donacion/${id}`;
   const qrRef = useRef();
 
+  // Function to download QR code as PNG
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
     const svgData = new XMLSerializer().serializeToString(svg);
