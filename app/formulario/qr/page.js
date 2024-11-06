@@ -6,12 +6,10 @@ import { useRef } from 'react';
 
 export default function QRPage() {
   const searchParams = useSearchParams();
-  const id = searchParams.get('id') || 12; //esto deja 0 si no hay id, osea que mientras no tenemos las variables del api
-  //hay que eliminarlo una vez tengamos todo lo de la api andando
+  const id = searchParams.get('id') || 12;
   const linkqr = `https://dlp.com/donacion/${id}`;
   const qrRef = useRef();
 
-  // funcion para descargar qr, no tocar nada
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
     const svgData = new XMLSerializer().serializeToString(svg);
