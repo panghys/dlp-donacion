@@ -5,6 +5,7 @@ import Libro from "@/app/formulario/libro.json";
 import Modal from "./modal.js";
 import Duda from "./duda.js";
 import { si_ISBN, no_ISBN } from "@/app/funciones/datos _libro.js";
+import { isbndatos } from "@/app/funciones/datos_isbn.js";
 
 export function persona() {
     const [opcionSeleccionadaPersona, setOpcionSeleccionadaPersona] = useState('');
@@ -64,11 +65,17 @@ export function persona() {
     );
 }
 
-export function codigo(){
+export function codigo() {
     const [opcionSeleccionadaCodigo, setOpcionSeleccionadaCodigo] = useState('');
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [mostrarISBN, setMostrarISBN] = useState(false);
+
+    // Estados para almacenar el título y autor
+    const [titulo, setTitulo] = useState('');
+    const [autor, setAutor] = useState('');
     
+    const [isDudaVisible, setDudaVisible] = useState(false);  // Añadido el estado para mostrar la duda
+
     const handleOpcionCodigoChange = (e) => {
         const seleccion = e.target.value;
         setOpcionSeleccionadaCodigo(seleccion);
@@ -82,23 +89,33 @@ export function codigo(){
         }    
     };
 
-    const siguienteClick = () => {
+    const siguienteClick = async () => {
         setMostrarContenido(true); // Muestra el contenido al hacer clic
-        setMostrarISBN(false); // Oculta el campo ISBN y el botón
+        setMostrarISBN(false); // Oculta el campo ISBN
+
+        const isbn = document.querySelector('input[name="codigo"]').value; // Obtén el valor del ISBN ingresado
+        const datosLibro = await isbndatos(isbn);  // Llama a la función isbndatos para obtener los datos
+        
+        if (datosLibro) {
+            setTitulo(datosLibro.titulo);  // Rellena el título
+            setAutor(datosLibro.autor);    // Rellena el autor
+        } else {
+            // Si no se encuentran los datos, puedes manejar el error (por ejemplo, mostrando un mensaje)
+            alert("No se encontró el libro con este ISBN.");
+        }
     };
 
-
-    const [isDudaVisible, setDudaVisible] = useState(false);
     const respuesClick = () => {
-        setDudaVisible(true);
+        setDudaVisible(true); // Muestra el modal de duda
     };
-    const handleModalClose = () => {
-        setDudaVisible(false); // Cierra el modal
-    };
-  
 
-    return(
+    const handleModalClose = () => {
+        setDudaVisible(false); // Cierra el modal de duda
+    };
+
+    return (
         <div>
+            {/* Renderiza las preguntas del formulario */}
             {Libro.Codigo.map((pregunta, i) => (
                 <div className='precionar' key={i}>
                     <div className="titulo1">
@@ -112,7 +129,6 @@ export function codigo(){
                                     type={pregunta.tipo}
                                     name={pregunta.id}
                                     value={opcion}
-                                    
                                     onChange={handleOpcionCodigoChange}
                                 />
                                 {opcion}
@@ -133,6 +149,19 @@ export function codigo(){
             {mostrarContenido && (
                <div>
                    {opcionSeleccionadaCodigo === 'Si' ? si_ISBN() :  no_ISBN()}
+                </div>
+            )}
+            {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
+            {titulo && autor && (
+                <div className='rellenar'>
+                    <div className='tex'>Título</div>
+                    <input type="text" value={titulo} readOnly />
+                </div>
+            )}
+            {titulo && autor && (
+                <div className='rellenar'>
+                    <div className='tex'>Autor</div>
+                    <input type="text" value={autor} readOnly />
                 </div>
             )}
             {isDudaVisible && (
