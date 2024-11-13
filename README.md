@@ -38,40 +38,20 @@
 | Añadir tipo 'radio' para las opciones que lo necesiten | 
 | Buscar una forma más óptima de agrupar los tipos de libro |
 
-# Sprint 2
+
+
+
+
+
+### En progreso...
 
 | Actividad | Responsable | Estado|
 | --------- | ----------- | ----- |
-| Diseño general y hacer funcionar los botones | - | - |
-| Creación de códigos qr y descarga de estos | Rodrigo González | Listo |
-| Creación de variables / adaptar a la API | - | - |
-| Funcionalidad de botones informacion del usuario  | Alvaro Guarda  | Listo |
+| Adaptación a la nueva interfaz | - | - |
+| Creación de la API interna | Rodrigo González | En progreso |
+| Autorelleno del formulario (ver lo de las tags) | - | - |
+| Adaptar a la API | -  | - |
 | - | - | - |
 
-## Retroalimentación Sprint 2
-### Función de los botones
-- Definir texto de términos y condiciones
-- Requisito de que se ingresen todos los datos antes de "guardar información"
-- Alertar al usuario de los datos no rellenados
-
-### Orden del formulario:
-  - Datos del usuario
-  - Términos y condiciones
-  - ISBN
-    
-    > Autocompletar si: OpenLibrary no tiene problemas / los datos del libro se ingresaron correctamente
-    > Ingresar datos manualmente si: OpenLibrary no responde / no se tiene el ISBN
-
-  
-  - Confirmación de los datos y enviar a la API
-  - Recibir variable ID y crear el QR
-  - Buscar información para transformar carátulas en base 64
-
-
-### Código
-  - Ordenar y organizar de mejor manera el código en general
-  - Investigar y adaptar la librería del ISBN
-  - Investigar ISSN
-  - Adaptar la API
 
 
