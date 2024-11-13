@@ -70,11 +70,11 @@ export function codigo() {
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [mostrarISBN, setMostrarISBN] = useState(false);
 
-    // Estados para almacenar el título y autor
-    const [titulo, setTitulo] = useState('');
-    const [autor, setAutor] = useState('');
+
+    const [titulo, setTitulo] = useState();
+    const [autor, setAutor] = useState();
     
-    const [isDudaVisible, setDudaVisible] = useState(false);  // Añadido el estado para mostrar la duda
+    const [isDudaVisible, setDudaVisible] = useState(false);  
 
     const handleOpcionCodigoChange = (e) => {
         const seleccion = e.target.value;
@@ -83,7 +83,7 @@ export function codigo() {
         if (seleccion === 'Si') {
             setMostrarISBN(true); // Muestra el campo ISBN
         } else {
-            setMostrarISBN(false); // Oculta el campo ISBN
+            setMostrarISBN(true); // Oculta el campo ISBN
             setMostrarContenido(true); // Muestra el contenido de no_ISBN
             setOpcionSeleccionadaCodigo('');
         }    
@@ -93,14 +93,14 @@ export function codigo() {
         setMostrarContenido(true); // Muestra el contenido al hacer clic
         setMostrarISBN(false); // Oculta el campo ISBN
 
-        const isbn = document.querySelector('input[name="codigo"]').value; // Obtén el valor del ISBN ingresado
+        const isbn = document.querySelector('input[name="codigo"]').value; 
         const datosLibro = await isbndatos(isbn);  // Llama a la función isbndatos para obtener los datos
         
         if (datosLibro) {
-            setTitulo(datosLibro.titulo);  // Rellena el título
-            setAutor(datosLibro.autor);    // Rellena el autor
+            setTitulo(datosLibro.titulo);
+            setAutor(datosLibro.autor); 
         } else {
-            // Si no se encuentran los datos, puedes manejar el error (por ejemplo, mostrando un mensaje)
+            
             alert("No se encontró el libro con este ISBN.");
         }
     };
@@ -151,7 +151,7 @@ export function codigo() {
                    {opcionSeleccionadaCodigo === 'Si' ? si_ISBN() :  no_ISBN()}
                 </div>
             )}
-            {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
+            {/* si pesca en teoria deberia estar listo */}
             {titulo && autor && (
                 <div className='rellenar'>
                     <div className='tex'>Título</div>
