@@ -31,11 +31,22 @@ const Modal = ({ isOpen, onClose }) => {
     }
   };
   return (
-    <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-content">
-        <h2>Términos y Condiciones</h2>
-        <div dangerouslySetInnerHTML={{ __html: termsText }} /> 
-      
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      onClick={handleOverlayClick}
+    >
+      <div className="bg-white rounded-lg shadow-lg w-11/12 max-w-lg p-6 relative">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+        >
+          &#10005; {/* Botón para cerrar */}
+        </button>
+        <h2 className="text-2xl font-bold mb-4 text-center">Términos y Condiciones</h2>
+        <div
+          className="text-gray-700 text-sm overflow-y-auto max-h-96"
+          dangerouslySetInnerHTML={{ __html: termsText }}
+        />
       </div>
     </div>
   );
