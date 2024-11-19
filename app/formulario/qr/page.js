@@ -47,20 +47,36 @@ function QRContent() {
 
     img.src = url;
   };
+  function handleClick() {
+    window.location.href = '/';
+  }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#f0f0f0', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>¡Gracias por tu donación!</h1>
-      <div ref={qrRef} style={{ marginBottom: '20px' }}>
-        <QRCode value={linkqr} size={256} style={{border: "5px solid black"}} />
+    <div className="flex flex-col justify-center items-center min-h-screen bg-custom-gradient">
+      <h1 className="text-3xl md:text-5xl font-sans text-white mt-4 mb-8">¡Gracias por tu donación!</h1>
+      <p className="text-customBlue font-sans text-center opacity-60 mb-8">A continuación, descargue e imprima el código QR y péguelo sobre su libro.</p>
+      
+      <div className="aspect-square w-96 bg-black bg-opacity-30 border-4 border-gray-700 rounded-[2vh] flex flex-col items-center mb-8">
+        <p className="text-customBlue font-sans opacity-60 mt-4 mb-8">Id de tu libro: {id}</p>
+        <div ref={qrRef}>
+          <QRCode value={linkqr} size={250} className="border-8 border-white rounded-[2vh]" />
+        </div>
       </div>
-      <p style={{ fontSize: '14px', color: '#666' }}>Descarga e imprime este código para pegarlo en tu libro. Id de tu libro: {id}</p>
-      <button 
-        onClick={downloadQR} 
-        style={{ padding: '10px 20px', marginTop: '20px', fontSize: '16px', cursor: 'pointer' }}
-      >
-        Descarga tu código QR
-      </button>
+
+      <div className="space-x-10 md:space-x-32">
+        <button 
+          onClick={handleClick} 
+          className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover mb-4"
+        >
+          Volver a donar
+        </button>
+        <button 
+          onClick={downloadQR} 
+          className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover mb-4"
+        >
+          Descarga tu código QR
+        </button>
+      </div>
     </div>
   );
 }
