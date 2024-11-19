@@ -26,19 +26,20 @@ export function persona() {
     return (
         <div>
             {formulario.tes.map((pregunta, i) => (
-                <div className='precionar' key={i}>
-                    <div className="titulo1">{pregunta.pregunta}</div> {/* Mostrar la pregunta */}
-                    <div className='rellenar'>
+                <div className='mb-6' key={i}>
+                    <div className="text-lg text-white opacity-60 mb-4 font-sans">{pregunta.pregunta}</div> {/* Mostrar la pregunta */}
+                    <div className='flex justify-center lg:justify-normal space-x-36'>
                         {pregunta.opciones.map((opcion, j) => (
-                            <label key={j}>
+                            <label key={j} className="flex items-center space-x-2 text-white opacity-60">
                                 <input
                                     type={pregunta.tipo}
                                     name={pregunta.id}
                                     value={opcion}
                                     
                                     onChange={handleOpcionPersonaChange}
+                                    className="appearance-none w-5 h-5 bg-white checked:bg-primary-gradient border-2 rounded"
                                 />
-                                {opcion}
+                                <span>{opcion}</span>
                             </label>
                         ))}
                     </div>
@@ -47,14 +48,28 @@ export function persona() {
             
             {opcionSeleccionadaPersona !== 'Si' && opcionSeleccionadaPersona !== '' && (
                 <div >
-                    <div className='rellenar'>
-                            <div className='tex'>Correo</div>
-                            <input type="email" name="correo" />
+                    <div className='mb-6 opacity-60'>
+                            <div className='text-white font-semibold text-xl'>Correo electrónico: </div>
+                            <input 
+                                type="email" 
+                                name="correo" 
+                                placeholder="  ejemplo@gmail.com" 
+                                class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3 placeholder-customGray"
+                            />
                     </div>
                     <div className='rellenar'>
-                        <label >
-                            <input type="checkbox" checked={isChecked} onChange={(e) => setChecked(e.target.checked)} disabled={!hasSeenTerms}  />
-                            <button className="texto-enlace"  onClick={toggleModal} >Terminos y Condiciones</button>
+                        <label>
+                            <div class="flex items-center justify-center lg:justify-normal opacity-60">
+                                <input 
+                                    type="checkbox" 
+                                    checked={isChecked} 
+
+                                    onChange={(e) => setChecked(e.target.checked)} disabled={!hasSeenTerms}
+                                    className="appearance-none w-5 h-5 bg-white checked:bg-primary-gradient border-2 rounded" 
+                                />
+                                <h2 className="mx-2 text-white">Terminos y Condiciones</h2>
+                            </div>
+                            <button className="texto-enlace text-customBlue font-sans text-center opacity-60 mb-4"  onClick={toggleModal} >Si desea leer los términos, haga clic aquí</button>
                             <Modal isOpen={isModalOpen} onClose={handleModalClose} />
                         </label>
                     </div>
@@ -70,11 +85,11 @@ export function codigo() {
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [mostrarISBN, setMostrarISBN] = useState(false);
 
-
-    const [titulo, setTitulo] = useState();
-    const [autor, setAutor] = useState();
+    // Estados para almacenar el título y autor
+    const [titulo, setTitulo] = useState('');
+    const [autor, setAutor] = useState('');
     
-    const [isDudaVisible, setDudaVisible] = useState(false);  
+    const [isDudaVisible, setDudaVisible] = useState(false);  // Añadido el estado para mostrar la duda
 
     const handleOpcionCodigoChange = (e) => {
         const seleccion = e.target.value;
@@ -83,7 +98,7 @@ export function codigo() {
         if (seleccion === 'Si') {
             setMostrarISBN(true); // Muestra el campo ISBN
         } else {
-            setMostrarISBN(true); // Oculta el campo ISBN
+            setMostrarISBN(false); // Oculta el campo ISBN
             setMostrarContenido(true); // Muestra el contenido de no_ISBN
             setOpcionSeleccionadaCodigo('');
         }    
@@ -93,14 +108,14 @@ export function codigo() {
         setMostrarContenido(true); // Muestra el contenido al hacer clic
         setMostrarISBN(false); // Oculta el campo ISBN
 
-        const isbn = document.querySelector('input[name="codigo"]').value; 
+        const isbn = document.querySelector('input[name="codigo"]').value; // Obtén el valor del ISBN ingresado
         const datosLibro = await isbndatos(isbn);  // Llama a la función isbndatos para obtener los datos
         
         if (datosLibro) {
-            setTitulo(datosLibro.titulo);
-            setAutor(datosLibro.autor); 
+            setTitulo(datosLibro.titulo);  // Rellena el título
+            setAutor(datosLibro.autor);    // Rellena el autor
         } else {
-            
+            // Si no se encuentran los datos, puedes manejar el error (por ejemplo, mostrando un mensaje)
             alert("No se encontró el libro con este ISBN.");
         }
     };
@@ -117,21 +132,22 @@ export function codigo() {
         <div>
             {/* Renderiza las preguntas del formulario */}
             {Libro.Codigo.map((pregunta, i) => (
-                <div className='precionar' key={i}>
-                    <div className="titulo1">
-                        <button className="btn_duda" onClick={respuesClick}>?</button>
-                        <div>{pregunta.pregunta}</div>
+                <div className='mb-6' key={i}>
+                    <div className="opacity-60">
+                        <div className="text-lg text-white font-sans">{pregunta.pregunta}</div>
+                        <button className="text-customBlue font-sans text-center mb-4" onClick={respuesClick}>¿Que es un ISBN?</button>
                     </div>
-                    <div className='rellenar'>
+                    <div className='flex justify-center lg:justify-normal space-x-36'>
                         {pregunta.opciones.map((opcion, j) => (
-                            <label key={j}>
+                            <label key={j} className="flex items-center space-x-2 text-white opacity-60">
                                 <input
                                     type={pregunta.tipo}
                                     name={pregunta.id}
                                     value={opcion}
                                     onChange={handleOpcionCodigoChange}
+                                    className="appearance-none w-5 h-5 bg-white checked:bg-primary-gradient border-2 rounded"
                                 />
-                                {opcion}
+                                <span>{opcion}</span>
                             </label>
                         ))}
                     </div>
@@ -139,11 +155,15 @@ export function codigo() {
             ))}
             {opcionSeleccionadaCodigo === 'Si' && mostrarISBN && (
                 <div>
-                    <div className='rellenar'>
-                        <div className='tex'>ISBN</div>
-                        <input type="text" name="codigo" />
-                        <button className="btn" onClick={siguienteClick}>Siguiente</button>
+                    <div className='mb-6 opacity-60'>
+                        <div className='text-white font-semibold text-xl'>ISBN:</div>
+                        <input 
+                            type="text" 
+                            name="codigo"
+                            class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3" 
+                        />
                     </div>
+                    <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 h-10 rounded transition-color duration-1000 hover:bg-gradient-hover" onClick={siguienteClick}>Siguiente</button>
                 </div>  
             )}
             {mostrarContenido && (
@@ -151,7 +171,8 @@ export function codigo() {
                    {opcionSeleccionadaCodigo === 'Si' ? si_ISBN() :  no_ISBN()}
                 </div>
             )}
-            {/* si pesca en teoria deberia estar listo */}
+            {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
+            {/* Aun faltaria ver si cambia en tailwind */}
             {titulo && autor && (
                 <div className='rellenar'>
                     <div className='tex'>Título</div>
