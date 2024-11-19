@@ -2,11 +2,11 @@
     "cuadrotx":[
         {
             "id":"Nombre del libro",
-            "gris":"Escriba el nombre correctamente"
+            "gris":"  Escriba el nombre correctamente"
         },
         {
             "id":"Nombre del Autor",
-            "gris":"si es mas de uno separelo por comas"
+            "gris":"  Si es mas de uno separelo por comas"
         }
         
         
