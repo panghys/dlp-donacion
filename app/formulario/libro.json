@@ -1,8 +1,8 @@
 {
     "cuadrotx":[
         {
-            "id":"Nombre del libro",
-            "gris":"  Escriba el nombre correctamente"
+            "id":"Nombre del Libro",
+            "gris":"  Escriba el Nombre Correctamente"
         },
         {
             "id":"Nombre del Autor",

@@ -4,7 +4,7 @@ import formulario from "@/app/formulario/donador.json";
 import Libro from "@/app/formulario/libro.json";
 import Modal from "./modal.js";
 import Duda from "./duda.js";
-import { si_ISBN, no_ISBN } from "@/app/funciones/datos _libro.js";
+import { si_ISBN, no_ISBN ,ISBN_no_funciona} from "@/app/funciones/datos _libro.js";
 import { isbndatos } from "@/app/funciones/datos_isbn.js";
 
 export function persona() {
@@ -168,23 +168,13 @@ export function codigo() {
             )}
             {mostrarContenido && (
                <div>
-                   {opcionSeleccionadaCodigo === 'Si' ? si_ISBN() :  no_ISBN()}
+                   
+                   {opcionSeleccionadaCodigo === 'no' ? no_ISBN() :  (titulo!=null && autor!=null)?si_ISBN(titulo,autor):ISBN_no_funciona()}
                 </div>
             )}
             {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
             {/* Aun faltaria ver si cambia en tailwind */}
-            {titulo && autor && (
-                <div className='rellenar'>
-                    <div className='tex'>Título</div>
-                    <input type="text" value={titulo} readOnly />
-                </div>
-            )}
-            {titulo && autor && (
-                <div className='rellenar'>
-                    <div className='tex'>Autor</div>
-                    <input type="text" value={autor} readOnly />
-                </div>
-            )}
+            
             {isDudaVisible && (
                 <div className="rellenar">
                     <Duda isOpen={isDudaVisible} onClose={handleModalClose}/>

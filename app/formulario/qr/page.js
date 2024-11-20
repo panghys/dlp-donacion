@@ -1,5 +1,8 @@
 "use client"; // Marca el componente para que se ejecute en el cliente
-
+/*
+https://dlp-prestamo.vercel.app/PDRL?libro=[ID]
+gttps://dlp-admin.vercel.app/
+*/
 import { useSearchParams } from 'next/navigation';
 import QRCode from 'react-qr-code';
 import { useRef, Suspense } from 'react';
@@ -14,8 +17,8 @@ export default function QRPage() {
 
 function QRContent() {
   const searchParams = useSearchParams();
-  const id = searchParams.get('id') || 12; // Default to 12 if no 'id' in search params
-  const linkqr = `https://dlp.com/donacion/${id}`;
+  const id = searchParams.get('id') || 1; // Default to 12 if no 'id' in search params
+  const linkqr = `https://dlp-prestamo.vercel.app/PDRL?libro=${id}`;
   const qrRef = useRef();
 
   // Function to download QR code as PNG

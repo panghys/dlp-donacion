@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-const Cuadro=({dato})=>{
-    const [nombre, setNombre] = useState("");
+const CuadroTex=({dato,valor})=>{
+    const [nombre, setNombre] = useState(`${valor}`);
     return(
         <input
             type="text"
@@ -12,4 +12,4 @@ const Cuadro=({dato})=>{
         />
     );
 }
-export default Cuadro;
+export default CuadroTex;
