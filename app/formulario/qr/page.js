@@ -63,16 +63,16 @@ function QRContent() {
         </div>
       </div>
 
-      <div className="space-x-6 md:space-x-32">
+      <div className="flex items-center space-x-12 md:space-x-32">
         <button 
           onClick={handleClick} 
-          className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover mb-4"
+          className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 md:w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover mb-4"
         >
           Volver a donar
         </button>
         <button 
           onClick={downloadQR} 
-          className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover mb-4"
+          className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 md:w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover mb-4"
         >
           Descarga tu código QR
         </button>
