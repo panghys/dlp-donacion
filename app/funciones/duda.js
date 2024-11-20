@@ -52,7 +52,7 @@ const Duda = ({ isOpen, onClose }) => {
                 <img 
                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6HkGGUlZna7sbOqOQuhQn9XdKLpOYmlr1kmOMT0KY0QNvtsOBQTl7gvkgK1QRmXuonz1Pg2NfBg1clljFEF5z01NwGbDQXo-dODhM1ECllzRhMbACM7Q82QZqkor0k06adj1H2r6GWWum/s1600/Qu%25C3%25A9+es+un+ISBN.png" 
                     alt="Qué es un ISBN" 
-                    className="max-w-sm md:max-w-full h-auto rounded-md"
+                    className="w-auto md:max-w-full h-auto rounded-md"
                 />
             </div>
         </div>
