@@ -64,12 +64,6 @@ export default function Home() {
   };
 
 
-
-
-
-  
-
-  //
 return (
   <div className="min-h-screen gap-20 bg-custom-gradient">
     <header className="flex flex-col lg:flex-row gap-4 items-center border-b border-gray-400">
@@ -81,7 +75,11 @@ return (
         className="my-4 lg:mx-12 lg:my-6 bg-black bg-opacity-30 border-2 border-gray-700 rounded-[2vh]"
       />
       <h1 className="text-5xl font-sans text-white ">Donacion</h1>
-      <button className="lg:absolute lg:top-8 lg:right-4 text-white">⬆️ Ir al catálogo general.</button>
+      <button
+        onClick={() => window.location.href = "https://dlp-dashboard.vercel.app/"} 
+        className="lg:absolute lg:top-8 lg:right-4 text-white"
+        >⬆️ Ir al catálogo general.
+      </button>
     </header>
 
     <div className="flex flex-col lg:flex-row">
