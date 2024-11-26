@@ -8,9 +8,10 @@ export default function Home() {
   const handleGuardarClick = () => {
     
     const correo = document.querySelector('input[name="correo"]')?.value || '';
-    const tituloLibro = document.querySelector('input[placeholder="Escriba el nombre correctamente"]')?.value || '';
-    const autores = document.querySelector('input[placeholder="si es mas de uno separelo por comas"]')?.value || '';
+    const tituloLibro = document.querySelector('input[placeholder="Escriba el Nombre Correctamente"]')?.value || '';
+    const autores = document.querySelector('input[placeholder="Si es mas de uno separelo por comas"]')?.value || '';
     const generos = Array.from(document.querySelectorAll('input[name="Genero"]:checked')).map(e => e.value);
+    const imagen64=document.querySelector('img[alt="Caratula"]')?.src  || '';
   
     const datosLibro = {
       titulo: tituloLibro,
@@ -18,7 +19,8 @@ export default function Home() {
       tags: generos,
       donante: correo,
       prestado: false,
-      borrado: false
+      borrado: false,
+      imagen:imagen64
     };
   
    
@@ -48,7 +50,7 @@ return (
         height={250} 
         className="my-4 lg:mx-12 lg:my-6 bg-black bg-opacity-30 border-2 border-gray-700 rounded-[2vh]"
       />
-      <h1 className="text-5xl font-sans text-white ">Donaciones</h1>
+      <h1 className="text-5xl font-sans text-white ">Donacion</h1>
       <button className="lg:absolute lg:top-8 lg:right-4 text-white">⬆️ Ir al catálogo general.</button>
     </header>
 

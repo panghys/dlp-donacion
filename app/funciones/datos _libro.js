@@ -40,25 +40,25 @@ export function no_ISBN(){
 //funcion que se vea la imagen del libro, donde se tendria que confirmar la imagen del libro o no 
 export function si_ISBN(titulo,autor,imagen){
     console.log(imagen);
+    
     return(
         <div className="opacity-60">
             <div className='text-customBlue font-sans mb-4'> Asegurate que los datos del libro esten todos correctos</div>
+            
             <div className='mb-6'>
                 <div className='text-white font-semibold text-xl'>{"Nombre del Libro"}</div>
-                <input type="text" value={titulo} readOnly 
+                <input type="text" value={titulo} readOnly  placeholder={"Escriba el Nombre Correctamente"}
                 class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 md:w-1/3 placeholder-customGray"/>
             </div>
+            
             <div className='mb-6'>
                 <div className='text-white font-semibold text-xl'>{"Nombre del Autor"}</div>
-                <input type="text" value={autor} readOnly 
+                <input type="text" value={autor} readOnly placeholder={"Si es mas de uno separelo por comas"}
                 class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 md:w-1/3 placeholder-customGray"/>
             </div>
+            
             <div className='mb-6'>
-                <img 
-                        src={imagen}
-                        alt="Qué es un ISBN" 
-                        className="w-auto h-auto rounded-md border-4 border-black shadow-lg"
-                    />
+                <img src={imagen} alt="Caratula" className="w-auto h-auto rounded-md border-4 border-black shadow-lg"/>
             </div>
             
            
