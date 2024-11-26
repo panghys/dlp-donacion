@@ -5,7 +5,8 @@ import Image from "next/image";
 // Donar Libros
 export default function Home() {
   const router = useRouter();
-  const handleGuardarClick = () => {
+
+  const handleGuardarClick = async () => {
     
     const correo = document.querySelector('input[name="correo"]')?.value || '';
     const tituloLibro = document.querySelector('input[placeholder="Escriba el Nombre Correctamente"]')?.value || '';
@@ -16,19 +17,43 @@ export default function Home() {
     const datosLibro = {
       titulo: tituloLibro,
       autores: autores,
+      imagen: imagen64,
+      isbn: "",
       tags: generos,
-      donante: correo,
-      prestado: false,
-      borrado: false,
-      imagen:imagen64
+      donante: correo
+      
     };
   
-   
-    const datosCompletos = {
-      libro: datosLibro,
-    };
   
-    const datosJSON = JSON.stringify(datosCompletos, null, 2);
+  try {
+    const response = await fetch('/api/libro', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(datosLibro),
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Error interno: ${response.status} - ${errorText}`);
+    }
+
+    const data = await response.json();
+    console.log('Respuesta de la API:', data);
+
+    localStorage.setItem('idDonacion', data.id);
+    alert(`Datos enviados exitosamente. ID recibido: ${data.id}`);
+
+    
+
+
+  } catch (error) {
+    console.error('Error al enviar los datos:', error.message);
+    alert('Ocurrió un error al enviar los datos. Por favor, intenta nuevamente.');
+  }
+
+  const datosJSON = JSON.stringify(datosLibro, null, 2);
     const blob = new Blob([datosJSON], { type: 'application/json' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
@@ -37,6 +62,11 @@ export default function Home() {
     URL.revokeObjectURL(link.href);
     router.push("/formulario/qr");
   };
+
+
+
+
+
   
 
   //
