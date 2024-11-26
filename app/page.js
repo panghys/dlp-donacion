@@ -42,10 +42,10 @@ export default function Home() {
     const data = await response.json();
     console.log('Respuesta de la API:', data);
 
-    localStorage.setItem('idDonacion', data.id);
-    alert(`Datos enviados exitosamente. ID recibido: ${data.id}`);
+    const id = data[0].id;
 
-    
+    console.log('ID recibido:', id);
+    alert(`Datos enviados exitosamente. ID recibido: ${id}`);
 
 
   } catch (error) {
