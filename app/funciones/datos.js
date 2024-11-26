@@ -53,7 +53,7 @@ export function persona() {
                             <input 
                                 type="email" 
                                 name="correo" 
-                                placeholder="  ejemplo@gmail.com" 
+                                placeholder="ejemplo@gmail.com" 
                                 class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3 placeholder-customGray"
                             />
                     </div>
@@ -167,13 +167,13 @@ export function codigo() {
                             class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3 placeholder-customGray"
                         />
                     </div>
-                    <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 h-10 rounded transition-color duration-1000 hover:bg-gradient-hover" onClick={siguienteClick}>Siguiente</button>
+                    <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 h-10 rounded transition-color duration-1000 hover:bg-gradient-hover opacity-60" onClick={siguienteClick}>Siguiente</button>
                 </div>  
             )}
             {mostrarContenido && (
                <div>
                    
-                   {opcionSeleccionadaCodigo != 'Si' ? no_ISBN() :  (titulo!=null && autor!=null)?si_ISBN(titulo,autor,imagen):ISBN_no_funciona()}
+                   {opcionSeleccionadaCodigo != 'Si' ? no_ISBN() : (titulo!=null && autor!=null)?si_ISBN(titulo,autor,imagen) : ISBN_no_funciona()}
                 </div>
             )}
             {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
