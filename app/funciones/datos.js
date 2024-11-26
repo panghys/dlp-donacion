@@ -69,7 +69,7 @@ export function persona() {
                                 />
                                 <h2 className="mx-2 text-white">Terminos y Condiciones</h2>
                             </div>
-                            <button className="texto-enlace text-customBlue font-sans text-center opacity-60 mb-4"  onClick={toggleModal} >Si desea leer los términos, haga clic aquí</button>
+                            <button className="texto-enlace text-customBlue font-sans text-center opacity-60 mb-4 underline"  onClick={toggleModal} >Si desea leer los términos, haga clic aquí</button>
                             <Modal isOpen={isModalOpen} onClose={handleModalClose} />
                         </label>
                     </div>
@@ -88,7 +88,8 @@ export function codigo() {
     // Estados para almacenar el título y autor
     const [titulo, setTitulo] = useState('');
     const [autor, setAutor] = useState('');
-    
+    const [imagen, setImagen] = useState('');
+
     const [isDudaVisible, setDudaVisible] = useState(false);  // Añadido el estado para mostrar la duda
 
     const handleOpcionCodigoChange = (e) => {
@@ -114,6 +115,7 @@ export function codigo() {
         if (datosLibro) {
             setTitulo(datosLibro.titulo);  // Rellena el título
             setAutor(datosLibro.autor);    // Rellena el autor
+            setImagen(datosLibro.imagen);  //Rellena la imagen
         } else {
             // Si no se encuentran los datos, puedes manejar el error (por ejemplo, mostrando un mensaje)
             alert("No se encontró el libro con este ISBN.");
@@ -135,7 +137,8 @@ export function codigo() {
                 <div className='mb-6' key={i}>
                     <div className="opacity-60">
                         <div className="text-lg text-white font-sans">{pregunta.pregunta}</div>
-                        <button className="text-customBlue font-sans text-center mb-4" onClick={respuesClick}>¿Que es un ISBN?</button>
+                        
+                        <button className= "text-customBlue font-sans text-center mb-4 underline" onClick={respuesClick}>¿Qué es un ISBN?</button>
                     </div>
                     <div className='flex justify-center lg:justify-normal space-x-36'>
                         {pregunta.opciones.map((opcion, j) => (
@@ -160,7 +163,8 @@ export function codigo() {
                         <input 
                             type="text" 
                             name="codigo"
-                            class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3" 
+                            placeholder="Escriba el ISBN sin puntos ni guiones"
+                            class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3 placeholder-customGray"
                         />
                     </div>
                     <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 h-10 rounded transition-color duration-1000 hover:bg-gradient-hover" onClick={siguienteClick}>Siguiente</button>
@@ -169,7 +173,7 @@ export function codigo() {
             {mostrarContenido && (
                <div>
                    
-                   {opcionSeleccionadaCodigo === 'no' ? no_ISBN() :  (titulo!=null && autor!=null)?si_ISBN(titulo,autor):ISBN_no_funciona()}
+                   {opcionSeleccionadaCodigo != 'Si' ? no_ISBN() :  (titulo!=null && autor!=null)?si_ISBN(titulo,autor,imagen):ISBN_no_funciona()}
                 </div>
             )}
             {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
