@@ -30,6 +30,13 @@
                 "tipo": "radio"
             }
         
+    ],
+    "Verificador":[
+            {
+                "id": "VerificaImagen",
+                "opciones": ["Si", "No"],
+                "tipo": "checkbox"
+            }
     ]
 
 }

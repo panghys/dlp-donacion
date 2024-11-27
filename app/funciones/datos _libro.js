@@ -80,12 +80,23 @@ export function si_ISBN(titulo,autor,imagen){
                         className="w-48 h-80 rounded-md border-4 border-black shadow-lg mb-6"
                     />
                 </div>
-                <div className="flex space-x-12 justify-center lg:justify-normal mb-10 opacity-60">
-                    <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 h-10 rounded transition-color duration-1000 hover:bg-gradient-hover">Si</button>
-                    <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-32 h-10 rounded transition-color duration-1000 hover:bg-gradient-hover">No</button>
-                </div>
+                {Libro.Verificador.map((pregunta, i) => (
+                    <div className="flex space-x-36 justify-center lg:justify-normal mb-10 opacity-60" key={i}>
+                        {pregunta.opciones.map((opcion, j) => (
+                            <label key={j} class="flex items-center space-x-2 text-white">
+                                <input 
+                                    type={pregunta.tipo}
+                                    name={pregunta.id}
+                                    value={opcion}
+                                    class="appearance-none w-5 h-5 bg-white checked:bg-primary-gradient border-2 rounded"
+                                />
+                                <snap>{opcion}</snap>
+                            </label>
+                            
+                        ))}
+                    </div>
+                ))} 
             </div>
-            
            
             {Libro.tes.map((pregunta, i) => (
                 <div className='precionar opacity-60' key={i}>

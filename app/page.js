@@ -18,7 +18,9 @@ export default function Home() {
     const tituloLibro = document.querySelector('input[placeholder="Escriba el Nombre Correctamente"]')?.value || '';
     const autores = document.querySelector('input[placeholder="Si es mas de uno separelo por comas"]')?.value || '';
     const generos = Array.from(document.querySelectorAll('input[name="Genero"]:checked')).map(e => e.value);
-    const imagen64=document.querySelector('img[alt="Caratula"]')?.src  || '';
+    const verifica = Array.from(document.querySelectorAll('input[name="VerificaImagen"]:checked')).map(e => e.value);
+    let imagen64 = ''
+    if(verifica[0]=="Si"){imagen64=document.querySelector('img[alt="Carátula"]')?.src}; 
 
     const anonimato = document.querySelector('input[name="anonimo"]:checked')?.value || '';
     const codigo = document.querySelector('input[placeholder="Escriba el ISBN sin puntos ni guiones"]')?.value || '';
@@ -133,8 +135,7 @@ return (
           <div>{codigo(tituloError,AutoresError)}</div>
         </div>
 
-        <div className="flex space-x-12 md:space-x-32 justify-center lg:justify-normal pt-4">
-          <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover">Atrás</button>
+        <div className="flex justify-center lg:justify-normal pt-4">
           <button className="bg-primary-gradient text-customGray font-semibold border-4 border-customBlue w-48 h-14 rounded transition-color duration-1000 hover:bg-gradient-hover" onClick={handleGuardarClick}>
             Guardar Información
           </button>
