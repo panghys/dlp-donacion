@@ -17,8 +17,9 @@ export default function QRPage() {
 }
 
 function QRContent() {
+  const idn = id;
   const searchParams = useSearchParams();
-  const linkqr = `https://dlp-prestamo.vercel.app/PDRL?libro=${id}`;
+  const linkqr = `https://dlp-prestamo.vercel.app/PDRL?libro=${idn}`;
   const qrRef = useRef();
 
   // Function to download QR code as PNG
@@ -41,7 +42,7 @@ function QRContent() {
       const png = canvas.toDataURL('image/png');
       const link = document.createElement('a');
       link.href = png;
-      link.download = `codigo-qr-libroid-${id}.png`;
+      link.download = `codigo-qr-libroid-${idn}.png`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -60,7 +61,7 @@ function QRContent() {
       <p className="text-customBlue font-sans text-center opacity-60 mb-8">A continuación, descargue e imprima el código QR y péguelo sobre su libro.</p>
       
       <div className="aspect-square w-96 bg-black bg-opacity-30 border-4 border-gray-700 rounded-[2vh] flex flex-col items-center mb-8">
-        <p className="text-customBlue font-sans opacity-60 mt-4 mb-8">Id de tu libro: {id}</p>
+        <p className="text-customBlue font-sans opacity-60 mt-4 mb-8">Id de tu libro: {idn}</p>
         <div ref={qrRef}>
           <QRCode value={linkqr} size={250} className="border-8 border-white rounded-[2vh]" />
         </div>
