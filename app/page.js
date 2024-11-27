@@ -86,7 +86,6 @@ export default function Home() {
     const blob = new Blob([datosJSON], { type: 'application/json' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'datos_donacion.json';
     link.click();
     URL.revokeObjectURL(link.href);
   };
