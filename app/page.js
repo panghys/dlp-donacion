@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import { useRouter } from "next/navigation";
 import { persona, codigo } from "./funciones/datos.js";
 import Image from "next/image";
@@ -6,32 +7,55 @@ import Image from "next/image";
 export default function Home() {
   const router = useRouter();
 
+  const [AutoresError, setAutoresError] = useState(false);//para ver si se escribio algo en autores
+  const [tituloError, setTituloError] = useState(false);//para ver si se escribio algo en titulo
+  const [correoError, setCorreoError] = useState(false);//para ver si se escribio algo en correo
+  
+
   const handleGuardarClick = async () => {
-    
     const correo = document.querySelector('input[name="correo"]')?.value || '';
     const tituloLibro = document.querySelector('input[placeholder="Escriba el Nombre Correctamente"]')?.value || '';
     const autores = document.querySelector('input[placeholder="Si es mas de uno separelo por comas"]')?.value || '';
     const generos = Array.from(document.querySelectorAll('input[name="Genero"]:checked')).map(e => e.value);
     const imagen64=document.querySelector('img[alt="Caratula"]')?.src  || '';
-  
+
+    const anonimato = document.querySelector('input[name="anonimo"]:checked')?.value || '';
+    const codigo = document.querySelector('input[placeholder="Escriba el ISBN sin puntos ni guiones"]')?.value || '';
+    console.log("el codigo isbn es", codigo)
+
+    if (correo.trim() === '' && anonimato === 'No') {
+      setCorreoError(true);  // Si el título está vacío, mostramos el error
+      return;  // Detener el proceso si el título no está rellenado
+    }setCorreoError(false);
+
+    if (!tituloLibro.trim()) {
+      setTituloError(true);  // Si el título está vacío, mostramos el error
+      return;  // Detener el proceso si el título no está rellenado
+    }setTituloError(false); 
+
+    if (!autores.trim()) {
+      setAutoresError(true);  // Si el título está vacío, mostramos el error
+      return;  // Detener el proceso si el título no está rellenado
+    }setAutoresError(false); 
+
+
     const datosLibro = {
       titulo: tituloLibro,
       autores: autores,
       imagen: imagen64,
       isbn: "",
       tags: generos,
-      donante: correo
-      
+      donante: correo 
     };
+    
   
-  
-  try {
-    const response = await fetch('/api/libro', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(datosLibro),
+    try {
+      const response = await fetch('/api/libro', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(datosLibro),
     });
 
     if (!response.ok) {
@@ -100,12 +124,12 @@ return (
       <div className="lg:w-2/3 space-y-4 p-8 text-center lg:text-left lg:overflow-y-auto lg:max-h-[calc(100vh-100px)]">
         <div className="persona">
           <h1 className="text-customBlue opacity-60 text-2xl font-semibold mb-4 font-sans">Informacion del Usuario</h1>
-          <div>{persona()}</div>
+          <div>{persona(correoError)}</div>
         </div>
 
         <div className="libro">
           <h1 className="text-customBlue opacity-60 text-2xl font-semibold mb-4 font-sans">Informacion del Libro</h1>
-          <div>{codigo()}</div>
+          <div>{codigo(tituloError,AutoresError)}</div>
         </div>
 
         <div className="flex space-x-12 md:space-x-32 justify-center lg:justify-normal pt-4">
