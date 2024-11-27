@@ -16,7 +16,7 @@ export default function Home() {
   const handleGuardarClick = async () => {
     const correo = document.querySelector('input[name="correo"]')?.value || '';
     const tituloLibro = document.querySelector('input[placeholder="Escriba el Nombre Correctamente"]')?.value || '';
-    const autores = document.querySelector('input[placeholder="Si es mas de uno separelo por comas"]')?.value || '';
+    const autores = document.querySelector('input[placeholder="Si es más de uno separelo por comas"]')?.value || '';
     const generos = Array.from(document.querySelectorAll('input[name="Genero"]:checked')).map(e => e.value);
     const verifica = Array.from(document.querySelectorAll('input[name="VerificaImagen"]:checked')).map(e => e.value);
     let imagen64 = ''
