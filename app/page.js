@@ -102,7 +102,7 @@ return (
       />
       <h1 className="text-5xl font-sans text-white ">Donacion</h1>
       <button
-        onClick={() => window.location.href = "https://dlp-dashboard.vercel.app/"} 
+        onClick={() => window.location.href = "https://dlp-prestamo.vercel.app/catalogo"} 
         className="lg:absolute lg:top-8 lg:right-4 text-white"
         >⬆️ Ir al catálogo general.
       </button>
