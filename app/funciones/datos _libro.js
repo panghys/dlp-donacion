@@ -56,7 +56,7 @@ export function si_ISBN(titulo,autor,imagen){
     
     return(
         <div className="">
-            <div className='text-orange-300 font-sans mb-4 text-xl font-semibold'> Asegurate que los datos del libro esten todos correctos</div>
+            <div className='text-orange-300 font-sans mb-4 text-xl font-semibold opacity-60'> Asegurate que los datos del libro esten todos correctos</div>
             
             <div className='opacity-60 mb-6'>
                 <div className='text-white font-semibold text-xl'>{"Nombre del Libro"}</div>
