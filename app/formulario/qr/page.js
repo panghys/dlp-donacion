@@ -17,11 +17,9 @@ export default function QRPage() {
 
 function QRContent() {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
   const linkqr = `https://dlp-prestamo.vercel.app/PDRL?libro=${id}`;
   const qrRef = useRef();
-
-  // Function to download QR code as PNG
+  
   const downloadQR = () => {
     const svg = qrRef.current.querySelector('svg');
     const svgData = new XMLSerializer().serializeToString(svg);
