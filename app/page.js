@@ -19,7 +19,7 @@ export default function Home() {
     const autores = document.querySelector('input[placeholder="Si es más de uno separelo por comas"]')?.value || '';
     const generos = Array.from(document.querySelectorAll('input[name="Genero"]:checked')).map(e => e.value);
     const verifica = Array.from(document.querySelectorAll('input[name="VerificaImagen"]:checked')).map(e => e.value);
-    let imagen64 = ''
+    let imagen64 = '';
     if(verifica[0]=="Si"){imagen64=document.querySelector('img[alt="Carátula"]')?.src}; 
 
     const anonimato = document.querySelector('input[name="anonimo"]:checked')?.value || '';
