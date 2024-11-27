@@ -7,7 +7,7 @@ import Duda from "./duda.js";
 import { si_ISBN, no_ISBN ,ISBN_no_funciona} from "@/app/funciones/datos _libro.js";
 import { isbndatos } from "@/app/funciones/datos_isbn.js";
 
-export function persona() {
+export function persona(correoError) {
     const [opcionSeleccionadaPersona, setOpcionSeleccionadaPersona] = useState('');
     const handleOpcionPersonaChange = (e) => {
         setOpcionSeleccionadaPersona(e.target.value);
@@ -35,13 +35,13 @@ export function persona() {
                                     type={pregunta.tipo}
                                     name={pregunta.id}
                                     value={opcion}
-                                    
                                     onChange={handleOpcionPersonaChange}
                                     className="appearance-none w-5 h-5 bg-white checked:bg-primary-gradient border-2 rounded"
                                 />
                                 <span>{opcion}</span>
                             </label>
                         ))}
+                        
                     </div>
                 </div>
             ))}
@@ -56,6 +56,12 @@ export function persona() {
                                 placeholder="ejemplo@gmail.com" 
                                 class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 lg:w-1/3 placeholder-customGray"
                             />
+                            {   correoError && (
+                                <div className="flex items-center mt-2">
+                                    <button className="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">!</button>
+                                    <span className="text-white text-lg">Escriba su correo antes de avanzar</span>
+                                </div>
+                             )}
                     </div>
                     <div className='rellenar'>
                         <label>
@@ -80,7 +86,7 @@ export function persona() {
     );
 }
 
-export function codigo() {
+export function codigo(tituloError,AutoresError) {
     const [opcionSeleccionadaCodigo, setOpcionSeleccionadaCodigo] = useState('');
     const [mostrarContenido, setMostrarContenido] = useState(false);
     const [mostrarISBN, setMostrarISBN] = useState(false);
@@ -173,7 +179,7 @@ export function codigo() {
             {mostrarContenido && (
                <div>
                    
-                   {opcionSeleccionadaCodigo != 'Si' ? no_ISBN() : (titulo!=null && autor!=null)?si_ISBN(titulo,autor,imagen) : ISBN_no_funciona()}
+                   {opcionSeleccionadaCodigo != 'Si' ? no_ISBN(tituloError,AutoresError) : (titulo!=null && autor!=null)?si_ISBN(titulo,autor,imagen) : ISBN_no_funciona(tituloError,AutoresError)}
                 </div>
             )}
             {/* Si se rellenaron los datos, mostrar los campos de título y autor */}
