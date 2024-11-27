@@ -16,6 +16,7 @@
 | Buscar librerías de next/react/js para los QR / correos | Rodrigo González |
 | Seleccionar componentes chakra para la interfaz | Diego Mora |
 | Crear código para guardar información del usuario/libro | Erick López |
+| Creación de botones para interfaces | Álvaro Guarda | 
 
 **El sprint 1 se basó en la planificación general, asi como tener un visual de como se verían los botones y los formularios**
 
@@ -34,9 +35,10 @@
 | --------- | ----------- |
 | Implementación de cuadros de texto y botones seleccionables (T&C, ayuda, info adicional) | Javier Martinez |
 | Prototipo de recolección de datos para la API | Erick López |
+| Descarga de un .json para comprobar los datos correctos | Erick López |
 | Creación de códigos QR según la id del libro | Rodrigo González |
 | Port a Tailwind CSS | Diego Mora |
-| - | - | - |
+|  | - | - |
 
 **El Sprint 2 se centró en implementar aquello que fue planeado y pulir la interfaz con funcionalidades nuevas y mejorando las antiguas**
 
@@ -50,13 +52,13 @@
 | Creación de API interna para recibir correctamente datos de OpenLibrary,  | Javier Martinez |
 | Autorelleno del formulario vía datos recibidos del ISBN | Javier Martinez |
 | Adaptación total a la API | Erick López |
-| Conseguir datos de ISBN, pasar imágenes a base64 | Rodrigo González |
+| Conseguir datos de ISBN | Rodrigo González |
+| Transformar imágenes y guardar imágenes a base 64 | Rodrigo González |
 | Adaptación de la interfaz general del proyecto | Diego Mora |
-| - | - | - |
+| Información sobre librerías base64 | Álvaro Guarda |
 
 
 **Finalmente, el sprint 3 pulió todo lo anterior, además de terminar todas las funcionalidades nuevas propuestas**
 
-### este readme es por mientras, aun no esta listo
 
 
