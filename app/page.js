@@ -82,13 +82,13 @@ export default function Home() {
     alert('Ocurrió un error al enviar los datos. Por favor, intenta nuevamente.');
   }
 
-  const datosJSON = JSON.stringify(datosLibro, null, 2);
+  /*const datosJSON = JSON.stringify(datosLibro, null, 2);
     const blob = new Blob([datosJSON], { type: 'application/json' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'datos_donacion.json';
     link.click();
     URL.revokeObjectURL(link.href);
+    */
   };
 
 
@@ -102,7 +102,7 @@ return (
         height={250} 
         className="my-4 lg:mx-12 lg:my-6 bg-black bg-opacity-30 border-2 border-gray-700 rounded-[2vh]"
       />
-      <h1 className="text-5xl font-sans text-white ">Donacion</h1>
+      <h1 className="text-5xl font-sans text-white ">Donación</h1>
       <button
         onClick={() => window.location.href = "https://dlp-prestamo.vercel.app/catalogo"} 
         className="lg:absolute lg:top-8 lg:right-4 text-white"
@@ -126,12 +126,12 @@ return (
 
       <div className="lg:w-2/3 space-y-4 p-8 text-center lg:text-left lg:overflow-y-auto lg:max-h-[calc(100vh-100px)]">
         <div className="persona">
-          <h1 className="text-customBlue opacity-60 text-2xl font-semibold mb-4 font-sans">Informacion del Usuario</h1>
+          <h1 className="text-customBlue opacity-60 text-2xl font-semibold mb-4 font-sans">Información del Usuario</h1>
           <div>{persona(correoError)}</div>
         </div>
 
         <div className="libro">
-          <h1 className="text-customBlue opacity-60 text-2xl font-semibold mb-4 font-sans">Informacion del Libro</h1>
+          <h1 className="text-customBlue opacity-60 text-2xl font-semibold mb-4 font-sans">Información del Libro</h1>
           <div>{codigo(tituloError,AutoresError)}</div>
         </div>
 
