@@ -24,7 +24,7 @@
     "Codigo":[
         
             {
-                "id": "anonimo",
+                "id": "codigo a mano",
                 "pregunta": "¿Tiene a mano el ISBN del libro?",
                 "opciones": ["Si", "No"],
                 "tipo": "radio"
