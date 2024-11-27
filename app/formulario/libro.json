@@ -6,7 +6,7 @@
         },
         {
             "id":"Nombre del Autor",
-            "gris":"Si es mas de uno separelo por comas"
+            "gris":"Si es más de uno separelo por comas"
         }
         
         
@@ -16,7 +16,7 @@
         { 
             "id": "Genero", 
             "pregunta":"Datos del Libro",
-            "opciones": ["Manga","Libro","Comic","Revista","Fantasia","Romance","Juvenil","Misterio","Terror","Ciencia ficcion","Historia","Literatura clásica"],
+            "opciones": ["Manga","Libro","Cómic","Revista","Fantasía","Romance","Juvenil","Misterio","Terror","Ciencia ficción","Historia","Literatura clásica"],
             "tipo":"checkbox"
         }
         
@@ -24,7 +24,7 @@
     "Codigo":[
         
             {
-                "id": "codigo a mano",
+                "id": "código a mano",
                 "pregunta": "¿Tiene a mano el ISBN del libro?",
                 "opciones": ["Si", "No"],
                 "tipo": "radio"
