@@ -70,6 +70,7 @@ export default function Home() {
     console.log('Respuesta de la API:', data);
 
     const id = data[0].id;
+    console.log(id);
     router.push(`/formulario/qr?id=${id}`);
 
     console.log('ID recibido:', id);
@@ -88,7 +89,6 @@ export default function Home() {
     link.download = 'datos_donacion.json';
     link.click();
     URL.revokeObjectURL(link.href);
-    router.push("/formulario/qr");
   };
 
 
