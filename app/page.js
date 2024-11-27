@@ -46,7 +46,8 @@ export default function Home() {
       titulo: tituloLibro,
       autores: autores,
       imagen: imagen64,
-      isbn: getIsbn(),
+      //isbn: getIsbn(),
+      isbn:'',
       tags: generos,
       donante: correo 
     };
