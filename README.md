@@ -56,6 +56,7 @@
 | Transformar imágenes y guardar imágenes a base 64 | Rodrigo González |
 | Adaptación de la interfaz general del proyecto | Diego Mora |
 | Información sobre librerías base64 | Álvaro Guarda |
+| Verificacion del auto-relleno de información| Javier Martinez|
 
 
 **Finalmente, el sprint 3 pulió todo lo anterior, además de terminar todas las funcionalidades nuevas propuestas**
