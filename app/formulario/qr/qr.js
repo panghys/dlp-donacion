@@ -7,7 +7,7 @@ export default function QRPage() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
-  const linkqr = `https://dlp-prestamo.vercel.app/PDRL?libro=${id}`;
+  const linkqr = `https://dlp-prestamo.vercel.app/PDRL?id=${id}`;
   const qrRef = useRef();
 
   const downloadQR = () => {
