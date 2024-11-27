@@ -43,6 +43,7 @@ export default function Home() {
     console.log('Respuesta de la API:', data);
 
     const id = data[0].id;
+    router.push(`/formulario/qr?id=${id}`);
 
     console.log('ID recibido:', id);
     alert(`Datos enviados exitosamente. ID recibido: ${id}`);
