@@ -47,7 +47,7 @@ export default function Home() {
       autores: autores,
       imagen: imagen64,
       //isbn: getIsbn(),
-      isbn:'',
+      isbn:1,
       tags: generos,
       donante: correo 
     };
