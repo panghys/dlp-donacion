@@ -6,6 +6,7 @@ gttps://dlp-admin.vercel.app/
 import { useSearchParams } from 'next/navigation';
 import QRCode from 'react-qr-code';
 import { useRef, Suspense } from 'react';
+import { id } from "./formulario/page.js";
 
 export default function QRPage() {
   return (
@@ -17,7 +18,6 @@ export default function QRPage() {
 
 function QRContent() {
   const searchParams = useSearchParams();
-  const id = searchParams.get('id') || 1; // Default to 12 if no 'id' in search params
   const linkqr = `https://dlp-prestamo.vercel.app/PDRL?libro=${id}`;
   const qrRef = useRef();
 
