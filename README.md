@@ -1,35 +1,25 @@
 
-# Sprint 1
+# DLP Donación
+
+## Sistema de donación de libros
+
+![Prototipo del ingreso de información del usuario](https://cdn.discordapp.com/attachments/763134307412738048/1311132448456835223/image.png?ex=6747bebf&is=67466d3f&hm=5deb74dbc9c7354fe191adf0e8b3e646da84cc36c9a22bf2e6e2813dfa64cc0d&)
+
+***Sistema de donación de libros con api interna de la librería DLP***
 
 
-| Actividad | Responsable | Estado|
-| --------- | ----------- | ----- |
-| Crear repositorio para el proyecto | Rodrigo González | Listo |
-| Confeccionar el mockup de la interfaz de donación | Javier Martinez  | Listo |
-| Buscar librerías de next/react/js para los QR / correos | Rodrigo González | Listo |
-| Seleccionar componentes chakra para la interfaz | Diego Mora | Listo |
-| Crear código para guardar información del usuario/libro | Erick López | en progreso...|
+### Resumen Sprint 1
+| Actividad | Responsable |
+| --------- | ----------- |
+| Crear repositorio para el proyecto | Rodrigo González |
+| Confeccionar el mockup de la interfaz de donación | Javier Martinez  |
+| Buscar librerías de next/react/js para los QR / correos | Rodrigo González |
+| Seleccionar componentes chakra para la interfaz | Diego Mora |
+| Crear código para guardar información del usuario/libro | Erick López |
 
+**El sprint 1 se basó en la planificación general, asi como tener un visual de como se verían los botones y los formularios**
 
-## Mockup de la página
-
-![Prototipo del ingreso de información del usuario](https://cdn.discordapp.com/attachments/1241914858228944907/1291049770433122414/image.png?ex=66feaf4b&is=66fd5dcb&hm=59059e716627f2b667b4f3d5e4b3bf82b4bdd644f06cdb39349f1ed718995b1a&)
-
-![Prototipo del ingreso de información del libro](https://cdn.discordapp.com/attachments/1241914858228944907/1291050476946587789/image.png?ex=66feaff4&is=66fd5e74&hm=4d6136ecafd41f43e1868cf8d7a43a282ed62faaa04d97d3e0af218194d14334&)
-
-
-
-
-## Documentación de librerías
-
-
--[Creación de códigos qr react](https://www.npmjs.com/package/qrcode.react)
-
--[Creación de códigos qr (node.js)](https://www.npmjs.com/package/qrcode)
-
--[Creación y envío de correos](https://resend.com/docs/send-with-nextjs)
-
-## Retroalimentación Sprint 1
+### Retroalimentación Sprint 1
 
 | Qué corregir... |
 | ------------ |
@@ -38,21 +28,35 @@
 | Añadir tipo 'radio' para las opciones que lo necesiten | 
 | Buscar una forma más óptima de agrupar los tipos de libro |
 
+### Resumen Sprint 2
 
-
-https://dlp-donacion.vercel.app
-
-
-
-### En progreso...
-
-| Actividad | Responsable | Estado|
-| --------- | ----------- | ----- |
-| Adaptación a la nueva interfaz | - | - |
-| Creación de la API interna | Rodrigo González | En progreso |
-| Autorelleno del formulario (ver lo de las tags) | - | - |
-| Adaptar a la API | -  | - |
+| Actividad | Responsable |
+| --------- | ----------- |
+| Implementación de cuadros de texto y botones seleccionables (T&C, ayuda, info adicional) | Javier Martinez |
+| Prototipo de recolección de datos para la API | Erick López |
+| Creación de códigos QR según la id del libro | Rodrigo González |
+| Port a Tailwind CSS | Diego Mora |
 | - | - | - |
 
+**El Sprint 2 se centró en implementar aquello que fue planeado y pulir la interfaz con funcionalidades nuevas y mejorando las antiguas**
+
+
+
+### Resumen Sprint 3
+
+
+| Actividad | Responsable |
+| --------- | ----------- |
+| Creación de API interna para recibir correctamente datos de OpenLibrary,  | Javier Martinez |
+| Autorelleno del formulario vía datos recibidos del ISBN | Javier Martinez |
+| Adaptación total a la API | Erick López |
+| Conseguir datos de ISBN, pasar imágenes a base64 | Rodrigo González |
+| Adaptación de la interfaz general del proyecto | Diego Mora |
+| - | - | - |
+
+
+**Finalmente, el sprint 3 pulió todo lo anterior, además de terminar todas las funcionalidades nuevas propuestas**
+
+### este readme es por mientras, aun no esta listo
 
 
