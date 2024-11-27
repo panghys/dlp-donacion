@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
 import { persona, codigo } from "./funciones/datos.js";
+import { getIsbn } from "./funciones/globals.js";
 import Image from "next/image";
 // Donar Libros
 export default function Home() {
@@ -43,7 +44,7 @@ export default function Home() {
       titulo: tituloLibro,
       autores: autores,
       imagen: imagen64,
-      isbn: "",
+      isbn: getIsbn(),
       tags: generos,
       donante: correo 
     };

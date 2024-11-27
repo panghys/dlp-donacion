@@ -6,6 +6,7 @@ import Modal from "./modal.js";
 import Duda from "./duda.js";
 import { si_ISBN, no_ISBN ,ISBN_no_funciona} from "@/app/funciones/datos _libro.js";
 import { isbndatos } from "@/app/funciones/datos_isbn.js";
+import { setIsbn } from "./globals";
 
 export function persona(correoError) {
     const [opcionSeleccionadaPersona, setOpcionSeleccionadaPersona] = useState('');
@@ -114,14 +115,17 @@ export function codigo(tituloError,AutoresError) {
     const siguienteClick = async () => {
         setMostrarContenido(true); // Muestra el contenido al hacer clic
         setMostrarISBN(false); // Oculta el campo ISBN
+        
 
         const isbn = document.querySelector('input[name="codigo"]').value; // Obtén el valor del ISBN ingresado
         const datosLibro = await isbndatos(isbn);  // Llama a la función isbndatos para obtener los datos
+        
         
         if (datosLibro) {
             setTitulo(datosLibro.titulo);  // Rellena el título
             setAutor(datosLibro.autor);    // Rellena el autor
             setImagen(datosLibro.imagen);  //Rellena la imagen
+            setIsbn(isbn);
         } else {
             // Si no se encuentran los datos, puedes manejar el error (por ejemplo, mostrando un mensaje)
             alert("No se encontró el libro con este ISBN.");
