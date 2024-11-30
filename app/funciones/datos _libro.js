@@ -66,7 +66,7 @@ export function si_ISBN(titulo,autor,imagen){
             
             <div className='opacity-60 mb-6'>
                 <div className='text-white font-semibold text-xl'>{"Nombre del Autor"}</div>
-                <input type="text" value={autor} readOnly placeholder={"Si es mas de uno separelo por comas"}
+                <input type="text" value={autor} readOnly placeholder={"Si es más de uno separelo por comas"}
                 class="appearance-none rounded border-4 border-customBlue bg-primary-gradient w-72 md:w-1/3 placeholder-customGray"/>
             </div>
             
